@@ -1,5 +1,4 @@
 import React from "react"
-import { Heading, Link, Box, Text } from "@chakra-ui/core"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -78,7 +77,8 @@ const IndexPage = (): JSX.Element => {
   return (
     <Layout>
       <SEO title="Home" />
-      <ImageBanner {...data.imageBanner} imgData={fetchData.ImageBanner} />
+      <ImageBanner {...data.imageBanner} imgData={fetchData.ImageBanner} isCentered={true}
+        link="služby"/>
       <WhyUs {...data.whyUs} />
     </Layout>
   )
