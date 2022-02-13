@@ -4,19 +4,30 @@ import BackgroundImage from "gatsby-background-image"
 import React from "react"
 import { Overlay } from "../Overlay/Overlay"
 import { SectionHeading } from "../SectionHeading/SectionHeading"
+import { IButton } from "../Button/Button"
 
 interface ImageBannerProps extends BoxProps {
   title: string
   description?: string
   button?: string
   imgData: any
+  isCentered?: boolean
+  link?: string
 }
 
 export const ImageBanner = (props: ImageBannerProps) => {
-  const { title, description, button, imgData, ...restOfProps } = props
+  const {
+    title,
+    description,
+    button,
+    link,
+    imgData,
+    isCentered = false,
+    ...restOfProps
+  } = props
 
   return (
-    <Box w="100%">
+    <Box width="100%" {...restOfProps}>
       <BackgroundImage
         fluid={imgData.placeholderImage.childImageSharp.fluid}
         preserveStackingContext
@@ -26,10 +37,17 @@ export const ImageBanner = (props: ImageBannerProps) => {
           justifyContent="center"
           alignItems="center"
           flexDirection="column"
+          p={10}
+          py={20}
         >
           <Overlay zIndex={0} opacity={80} />
           <Stack spacing={{ base: 5, md: 8 }} alignItems={"center"}>
-            <SectionHeading title={title} description={description} />
+            <SectionHeading
+              title={title}
+              description={description}
+              isCentered={isCentered}
+            />
+            {button && link && <IButton to={link} text={button} my={20} />}
           </Stack>
         </Flex>
       </BackgroundImage>
