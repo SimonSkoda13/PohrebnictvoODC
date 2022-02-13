@@ -33,39 +33,40 @@ const Footer = (props: FooterProps) => {
   } = props
   console.log("🚀 ~ file: footer.tsx ~ line 33 ~ Footer ~ props", props)
   return (
-    <SimpleGrid
-      columns={6}
-      spacing={20}
-      position="absolute"
+    <Flex
+      flexDir={{ md: "row", base: "column" }}
+      alignItems={{ md: "normal", base: "center" }}
+      justifyContent={"center"}
+      position="relative"
       bottom={0}
       w="100%"
       bgColor="#1A4645"
       color="white"
     >
-      <Box></Box>
       <Flex
         position="relative"
-        w="100%"
-        h={{ md: 130, base: "auto" }}
         background="white"
-        p={20}
         flexDir="column"
-        overflow="visible"
         justifyContent="center"
         textAlign="center"
         color="#1A4645"
+        p={3}
+        mx={{ md: 7, base: 0 }}
+        maxWidth={200}
         boxShadow=" rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;"
       >
-        <Box w="100%" pb={10}>
+        <Box pb={5}>
           <Img fluid={data.placeholderImage.childImageSharp.fluid} />
         </Box>
-        <Text fontSize="md" py={2}>
+        <Text fontSize="sxs" pb={2}>
           {header1[0]}
         </Text>
-        <Text fontSize="small">{header1[1]}</Text>
+        <Text fontSize="small" pb={3}>
+          {header1[1]}
+        </Text>
       </Flex>
-      <Flex flexDir="column" p={20}>
-        <Heading as="h4" size="md" pb={10}>
+      <Box py={5} mx={{ md: 7, base: 0 }} maxWidth={200}>
+        <Heading as="h4" size="sxs" pb={2}>
           Kontakty
         </Heading>
         <Box>
@@ -73,9 +74,9 @@ const Footer = (props: FooterProps) => {
             return <Box fontSize="small">{item}</Box>
           })}
         </Box>
-      </Flex>
-      <Box p={20}>
-        <Heading as="h4" size="md" pb={10}>
+      </Box>
+      <Box py={5} mx={{ md: 7, base: 0 }} maxWidth={200}>
+        <Heading as="h4" size="sxs" pb={2}>
           Fakturačná adresa
         </Heading>
         <Box>
@@ -84,8 +85,8 @@ const Footer = (props: FooterProps) => {
           })}
         </Box>
       </Box>
-      <Box p={20}>
-        <Heading as="h4" size="md" pb={10}>
+      <Box py={5} mx={{ md: 7, base: 0 }} maxWidth={200}>
+        <Heading as="h4" size="sxs" pb={2}>
           Dôležité linky
         </Heading>
         <ul>
@@ -98,7 +99,7 @@ const Footer = (props: FooterProps) => {
           })}
         </ul>
       </Box>
-    </SimpleGrid>
+    </Flex>
   )
 }
 export default Footer

@@ -29,7 +29,7 @@ export const ImageBanner = (props: ImageBannerProps) => {
   return (
     <Box width="100%" {...restOfProps}>
       <BackgroundImage
-        fluid={imgData.placeholderImage.childImageSharp.fluid}
+        fluid={imgData.childImageSharp.fluid}
         preserveStackingContext
       >
         <Flex
@@ -40,7 +40,6 @@ export const ImageBanner = (props: ImageBannerProps) => {
           p={10}
           py={20}
         >
-          <Overlay zIndex={0} opacity={80} />
           <Stack spacing={{ base: 5, md: 8 }} alignItems={"center"}>
             <SectionHeading
               title={title}
