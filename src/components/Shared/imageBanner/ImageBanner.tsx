@@ -1,8 +1,7 @@
-import { BoxProps } from "@chakra-ui/core"
-import { Box, Flex, Stack } from "@chakra-ui/react"
+import { Box, BoxProps } from "@chakra-ui/core"
+import { Flex, Stack } from "@chakra-ui/react"
 import BackgroundImage from "gatsby-background-image"
 import React from "react"
-import { Overlay } from "../Overlay/Overlay"
 import { SectionHeading } from "../SectionHeading/SectionHeading"
 import { IButton } from "../Button/Button"
 
@@ -45,8 +44,9 @@ export const ImageBanner = (props: ImageBannerProps) => {
               title={title}
               description={description}
               isCentered={isCentered}
+              colorMode="white"
             />
-            {button && link && <IButton to={link} text={button} my={20} />}
+            {button && link && <IButton to={link} text={button} />}
           </Stack>
         </Flex>
       </BackgroundImage>

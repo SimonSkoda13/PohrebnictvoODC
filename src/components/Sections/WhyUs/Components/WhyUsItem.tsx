@@ -27,7 +27,7 @@ export const WhyUsItem = (props: WhyUsItemProps) => {
           objectPosition="50% 50%"
         />
       </Box>
-      <Heading color="#226867" fontSize="md">
+      <Heading color="primary" fontSize="md">
         {title}
       </Heading>
       <Box fontSize="small">{description}</Box>

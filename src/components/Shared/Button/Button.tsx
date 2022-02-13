@@ -11,13 +11,13 @@ export const IButton = (props: IButtonProps) => {
   return (
     <Link to={to}>
       <Box
-        background="#226867"
+        background="primary"
         color="white"
-        p={7}
-        px={10}
-        minW={100}
+        p={3}
+        px={5}
+        minW={50}
         borderRadius={3}
-        fontSize="15px"
+        fontSize="sm"
         fontWeight="600"
         {...restOfProps}
       >
