@@ -11,6 +11,8 @@ import Header from "./header"
 import Footer from "./footer"
 
 import { Box, Link, Icon } from "@chakra-ui/core"
+import { ChakraProvider } from "@chakra-ui/react"
+import { theme } from "./theme"
 
 export interface LayoutProps {
   children: React.ReactNode
@@ -33,14 +35,16 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
   `)
   console.log("🚀 ~ file: layout.tsx ~ line 36 ~ data", data)
   return (
-    <>
-      <Header
-        header1={data.site.siteMetadata.header1}
-        header2={data.site.siteMetadata.header2}
-      />
-      {children}
-      <Footer {...data.site.siteMetadata} />
-    </>
+    <ChakraProvider theme={theme}>
+      <>
+        <Header
+          header1={data.site.siteMetadata.header1}
+          header2={data.site.siteMetadata.header2}
+        />
+        {children}
+        <Footer {...data.site.siteMetadata} />
+      </>
+    </ChakraProvider>
   )
 }
 

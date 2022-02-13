@@ -42,7 +42,7 @@ const Header = (props: HeaderProps) => {
       </Flex>
       <Flex
         width="100%"
-        height={60}
+        height={30}
         justifyContent={"center"}
         alignItems="center"
         p="6"
@@ -55,19 +55,13 @@ const Header = (props: HeaderProps) => {
         {header2.map((item, index) => {
           return index == 0 ? (
             <Link to="/">
-              <Box
-                fontSize="md"
-                fontWeight="bold"
-                px={10}
-                color="#226867"
-                pl={20}
-              >
+              <Box fontSize="md" fontWeight="bold" px={2} color="#226867">
                 {item}
               </Box>
             </Link>
           ) : (
             <Link to={item.toLocaleLowerCase().replace(/\s/g, "")}>
-              <Box fontSize="md" px={10}>
+              <Box fontSize="md" px={2}>
                 {item}
               </Box>
             </Link>

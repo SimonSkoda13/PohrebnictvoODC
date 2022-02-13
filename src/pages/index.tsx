@@ -5,8 +5,41 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import { ImageBanner } from "../components/Shared/imageBanner/ImageBanner"
+import { WhyUs } from "../components/Sections/WhyUs/WhyUs"
 
 const IndexPage = (): JSX.Element => {
+  const fetchData = useStaticQuery(graphql`
+    fragment BannerImage on File {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    fragment SmallImg on File {
+      childImageSharp {
+        fluid(maxWidth: 200, maxHeight: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    query {
+      ImageBanner: file(relativePath: { eq: "index/ImageBanner.png" }) {
+        ...BannerImage
+      }
+
+      WhyUsImg1: file(relativePath: { eq: "index/WhyUsImg1.png" }) {
+        ...SmallImg
+      }
+      WhyUsImg2: file(relativePath: { eq: "index/WhyUsImg2.png" }) {
+        ...SmallImg
+      }
+
+      WhyUsImg3: file(relativePath: { eq: "index/WhyUsImg3.png" }) {
+        ...SmallImg
+      }
+    }
+  `)
   const data = {
     imageBanner: {
       title: "Prevedieme Vás ťažkou životnou situáciou",
@@ -23,39 +56,30 @@ const IndexPage = (): JSX.Element => {
           title: "Profesinálne služby",
           description:
             "Viac ako 15 ročné skúsenosti v oblasti pohrebných služieb",
+          imgData: fetchData.WhyUsImg1,
         },
         {
           title: "Pochopenie a úcta",
           description:
             "Sme empatický kolektív a našu prácu považujeme za poslanie",
+          imgData: fetchData.WhyUsImg2,
         },
         {
           title: "Individuálny prístup",
           description: "Budeme Vás sprevádzať celým procesom odchodu zoznulého",
+          imgData: fetchData.WhyUsImg3,
         },
       ],
       button: "Chcete vedieť viac?",
     },
   }
-
-  const imgData = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(
-        relativePath: { eq: "index/index_ImageBanner.png" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+  console.log("🚀 ~ file: index.tsx ~ line 82 ~ data", data)
 
   return (
     <Layout>
       <SEO title="Home" />
-      <ImageBanner {...data.imageBanner} imgData={imgData} />
+      <ImageBanner {...data.imageBanner} imgData={fetchData.ImageBanner} />
+      <WhyUs {...data.whyUs} />
     </Layout>
   )
 }
