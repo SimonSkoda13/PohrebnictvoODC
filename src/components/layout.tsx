@@ -10,7 +10,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
 
-import { Box, Link, Icon } from "@chakra-ui/core"
+import { Box } from "@chakra-ui/core"
+import { ChakraProvider } from "@chakra-ui/react"
 
 export interface LayoutProps {
   children: React.ReactNode
@@ -33,14 +34,14 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
   `)
   console.log("🚀 ~ file: layout.tsx ~ line 36 ~ data", data)
   return (
-    <>
+    <Box w="100%" h="100%" fontFamily="Source Serif Pro">
       <Header
         header1={data.site.siteMetadata.header1}
         header2={data.site.siteMetadata.header2}
       />
       {children}
       <Footer {...data.site.siteMetadata} />
-    </>
+    </Box>
   )
 }
 
