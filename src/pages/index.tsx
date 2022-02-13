@@ -51,8 +51,6 @@ const IndexPage = (): JSX.Element => {
       }
     }
   `)
-  console.log("🚀 ~ file: index.tsx ~ line 51 ~ imgData", imgData)
-  console.log("🚀 ~ file: index.tsx ~ line 23 ~ data", data)
 
   return (
     <Layout>
