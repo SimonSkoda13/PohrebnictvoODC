@@ -10,7 +10,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
 
-import { Box, Link, Icon } from "@chakra-ui/core"
 import { ChakraProvider } from "@chakra-ui/react"
 import { theme } from "./theme"
 
@@ -33,7 +32,6 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
       }
     }
   `)
-  console.log("🚀 ~ file: layout.tsx ~ line 36 ~ data", data)
   return (
     <ChakraProvider theme={theme}>
       <>

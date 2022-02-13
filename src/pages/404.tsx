@@ -9,7 +9,7 @@ const NotFoundPage = (): JSX.Element => (
     <SEO title="404: Not found" />
     <Heading>NOT FOUND</Heading>
     <Text fontSize="lg">
-      You just hit a route that doesn&#39;t exist... the sadness.
+      You just hit a route that doesnt exist... the sadness.
     </Text>
   </Layout>
 )

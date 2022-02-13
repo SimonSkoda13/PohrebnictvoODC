@@ -26,7 +26,6 @@ const SEO = ({ lang = "sk", title }: SEOProps): JSX.Element => {
       }
     `
   )
-  console.log("🚀 ~ file: seo.tsx ~ line 30 ~ site", site)
   const metaDescription = site.siteMetadata.description
 
   return (
