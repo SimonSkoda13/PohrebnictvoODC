@@ -33,7 +33,7 @@ module.exports = {
         name: `Pohrebná služba`,
         short_name: `Pohrebnictvo`,
         start_url: `/`,
-        icon: `src/images/Group.svg`, // This path is relative to the root of the site.
+        icon: `src/images/generalIcon.png`, // This path is relative to the root of the site.
       },
     },
     {
