@@ -1,18 +1,18 @@
 import {
   Container as ChakraContainer,
   ContainerProps as ChakraContainerProps,
-} from "@chakra-ui/layout"
-import React, { ReactNode } from "react"
+} from '@chakra-ui/layout';
+import React, { ReactNode } from 'react';
 
 export interface ContainerProps extends ChakraContainerProps {
-  children?: ReactNode
+  children?: ReactNode;
 }
 
 export const Container = (props: ContainerProps) => {
-  const { children, maxW = "container.xl", ...restOfProps } = props
+  const { children, maxW = 'container.xl', ...restOfProps } = props;
   return (
-    <ChakraContainer maxW={maxW} {...restOfProps}>
+    <ChakraContainer maxW={maxW} my={10} {...restOfProps}>
       {children}
     </ChakraContainer>
-  )
-}
+  );
+};

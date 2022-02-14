@@ -13,8 +13,8 @@ export interface WhyUsProps extends BoxProps {
 export const WhyUs = (props: WhyUsProps) => {
   const { title, description, items, ...restOfProps } = props;
   return (
-    <Container py={10}>
-      <Flex flexDir="column" alignItems="center">
+    <Container>
+      <Flex flexDir="column" alignItems="center" pb={9}>
         <SectionHeading
           title={title}
           description={description}

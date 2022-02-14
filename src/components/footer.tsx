@@ -26,12 +26,12 @@ const Footer = (props: FooterProps) => {
 
   const { contacts, header1, invoiceAdress, importantLinks, ...restOfProps } =
     props;
-  console.log('🚀 ~ file: footer.tsx ~ line 33 ~ Footer ~ props', props);
   return (
     <Flex
       flexDir={{ md: 'row', base: 'column' }}
       alignItems={{ md: 'normal', base: 'center' }}
       justifyContent={'center'}
+      m="auto"
       position="relative"
       bottom={0}
       w="100%"
@@ -39,7 +39,6 @@ const Footer = (props: FooterProps) => {
       color="white"
     >
       <Flex
-        position="relative"
         background="white"
         flexDir="column"
         justifyContent="center"

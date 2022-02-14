@@ -1,10 +1,10 @@
-import React from "react"
+import React from 'react';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { useStaticQuery, graphql } from "gatsby"
-import { ImageBanner } from "../components/Shared/imageBanner/ImageBanner"
-import { WhyUs } from "../components/Sections/WhyUs/WhyUs"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import { useStaticQuery, graphql } from 'gatsby';
+import { ImageBanner } from '../components/Shared/imageBanner/ImageBanner';
+import { WhyUs } from '../components/Sections/WhyUs/WhyUs';
 
 const IndexPage = (): JSX.Element => {
   const fetchData = useStaticQuery(graphql`
@@ -38,50 +38,53 @@ const IndexPage = (): JSX.Element => {
         ...SmallImg
       }
     }
-  `)
+  `);
   const data = {
     imageBanner: {
-      title: "Prevedieme Vás ťažkou životnou situáciou",
+      title: 'Prevedieme Vás ťažkou životnou situáciou',
       description:
-        "Krátky text v tejto veľkosti o osobnom prístupe. Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní individuálnych pohrebných služieb v rámci Bratislavy a SR",
-      button: "Ako postupovať pri zabezpečení pohrebu?",
+        'Krátky text v tejto veľkosti o osobnom prístupe. Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní individuálnych pohrebných služieb v rámci Bratislavy a SR',
+      button: 'Ako postupovať pri zabezpečení pohrebu?',
     },
     whyUs: {
-      title: "Prečo sa rozhodnúť pre nás?",
+      title: 'Prečo sa rozhodnúť pre nás?',
       description:
-        "Veríme že v ťažkých životných situáciach odceníte náš individuálny prístup, profesionalitu a pochopenie. Máme dlhoročné skúseností v poskytovaní pohrebných služieb na profesionálnej úrovni.",
+        'Veríme že v ťažkých životných situáciach odceníte náš individuálny prístup, profesionalitu a pochopenie. Máme dlhoročné skúseností v poskytovaní pohrebných služieb na profesionálnej úrovni.',
       items: [
         {
-          title: "Profesinálne služby",
+          title: 'Profesinálne služby',
           description:
-            "Viac ako 15 ročné skúsenosti v oblasti pohrebných služieb",
+            'Viac ako 15 ročné skúsenosti v oblasti pohrebných služieb',
           imgData: fetchData.WhyUsImg1,
         },
         {
-          title: "Pochopenie a úcta",
+          title: 'Pochopenie a úcta',
           description:
-            "Sme empatický kolektív a našu prácu považujeme za poslanie",
+            'Sme empatický kolektív a našu prácu považujeme za poslanie',
           imgData: fetchData.WhyUsImg2,
         },
         {
-          title: "Individuálny prístup",
-          description: "Budeme Vás sprevádzať celým procesom odchodu zoznulého",
+          title: 'Individuálny prístup',
+          description: 'Budeme Vás sprevádzať celým procesom odchodu zoznulého',
           imgData: fetchData.WhyUsImg3,
         },
       ],
-      button: "Chcete vedieť viac?",
+      button: 'Chcete vedieť viac?',
     },
-  }
-  console.log("🚀 ~ file: index.tsx ~ line 82 ~ data", data)
+  };
 
   return (
     <Layout>
       <SEO title="Home" />
-      <ImageBanner {...data.imageBanner} imgData={fetchData.ImageBanner} isCentered={true}
-        link="služby"/>
+      <ImageBanner
+        {...data.imageBanner}
+        imgData={fetchData.ImageBanner}
+        isCentered={true}
+        link="služby"
+      />
       <WhyUs {...data.whyUs} />
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
