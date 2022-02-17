@@ -5,6 +5,7 @@ import SEO from '../components/seo';
 import { useStaticQuery, graphql } from 'gatsby';
 import { ImageBanner } from '../components/Shared/imageBanner/ImageBanner';
 import { WhyUs } from '../components/Sections/WhyUs/WhyUs';
+import { Services } from '@/components/Sections/Services/Services';
 
 const IndexPage = (): JSX.Element => {
   const fetchData = useStaticQuery(graphql`
@@ -18,6 +19,13 @@ const IndexPage = (): JSX.Element => {
     fragment SmallImg on File {
       childImageSharp {
         fluid(maxWidth: 200, maxHeight: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    fragment ServicesImg on File {
+      childImageSharp {
+        fluid(maxWidth: 350) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -37,8 +45,25 @@ const IndexPage = (): JSX.Element => {
       WhyUsImg3: file(relativePath: { eq: "index/WhyUsImg3.png" }) {
         ...SmallImg
       }
+      Services1: file(relativePath: { eq: "index/Services1.png" }) {
+        ...ServicesImg
+      }
+      Services2: file(relativePath: { eq: "index/Services2.png" }) {
+        ...ServicesImg
+      }
+      Services3: file(relativePath: { eq: "index/Services3.png" }) {
+        ...ServicesImg
+      }
+      logo_row: file(relativePath: { eq: "logo-row.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
+  console.log('🚀 ~ file: index.tsx ~ line 59 ~ fetchData', fetchData);
   const data = {
     imageBanner: {
       title: 'Prevedieme Vás ťažkou životnou situáciou',
@@ -71,6 +96,31 @@ const IndexPage = (): JSX.Element => {
       ],
       button: 'Chcete vedieť viac?',
     },
+    services: {
+      title: 'Pohrebné služby',
+      description:
+        'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR.',
+      items: [
+        {
+          title: 'Pohrebné služby',
+          description: 'Ponúkame komplexné zabezpečenie pohrebu',
+          imgData: fetchData.Services1,
+        },
+        {
+          title: 'Ponuka truhiel',
+          description:
+            'Široký výber truhiel od cenovo dostupných až po prémiové',
+          imgData: fetchData.Services2,
+        },
+        {
+          title: 'Kytice a vence',
+          description: 'Viažeme smútočné kytice a vence podľa Vašich prianí',
+          imgData: fetchData.Services3,
+        },
+      ],
+      button: 'Chcete vedieť viac?',
+      logo: fetchData.logo_row,
+    },
   };
 
   return (
@@ -82,7 +132,8 @@ const IndexPage = (): JSX.Element => {
         isCentered={true}
         link="služby"
       />
-      <WhyUs {...data.whyUs} />
+      <WhyUs {...data.whyUs} buttonTo="služby" />
+      <Services {...data.services} buttonTo="služby" />
     </Layout>
   );
 };
