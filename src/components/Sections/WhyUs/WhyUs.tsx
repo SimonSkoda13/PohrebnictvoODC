@@ -1,3 +1,4 @@
+import { IButton } from '@/components/Shared/Button/Button';
 import { Box, BoxProps, Flex } from '@chakra-ui/react';
 import React from 'react';
 import { Container } from '../../Shared/Container/Container';
@@ -8,10 +9,12 @@ export interface WhyUsProps extends BoxProps {
   title: string;
   description: string;
   items: WhyUsItemProps[];
+  button?: string;
+  buttonTo?: string;
 }
 
 export const WhyUs = (props: WhyUsProps) => {
-  const { title, description, items, ...restOfProps } = props;
+  const { title, description, items, button, buttonTo, ...restOfProps } = props;
   return (
     <Container>
       <Flex flexDir="column" alignItems="center" pb={9}>
@@ -31,6 +34,7 @@ export const WhyUs = (props: WhyUsProps) => {
             return <WhyUsItem {...item} />;
           })}
         </Flex>
+        <IButton text={button} to={buttonTo ? buttonTo : '/'} mt={6} />
       </Flex>
     </Container>
   );

@@ -9,7 +9,7 @@ export interface ContainerProps extends ChakraContainerProps {
 }
 
 export const Container = (props: ContainerProps) => {
-  const { children, maxW = 'container.xl', ...restOfProps } = props;
+  const { children, maxW = 'container.lg', ...restOfProps } = props;
   return (
     <ChakraContainer maxW={maxW} my={10} {...restOfProps}>
       {children}
