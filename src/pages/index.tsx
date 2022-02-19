@@ -7,6 +7,7 @@ import { ImageBanner } from '../components/Shared/imageBanner/ImageBanner';
 import { WhyUs } from '../components/Sections/WhyUs/WhyUs';
 import { Services } from '@/components/Sections/Services/Services';
 import { ImageParagraph } from '@/components/Shared/ImageParagraph/ImageParagraph';
+import { Experiences } from '@/components/Sections/Experiences/Experiences';
 
 const IndexPage = (): JSX.Element => {
   const fetchData = useStaticQuery(graphql`
@@ -154,31 +155,28 @@ const IndexPage = (): JSX.Element => {
       ],
       button: 'Zavolajte nám +421 905 309 755',
     },
-    // services: {
-    //   title: 'Pohrebné služby',
-    //   description:
-    //     'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR.',
-    //   items: [
-    //     {
-    //       title: 'Pohrebné služby',
-    //       description: 'Ponúkame komplexné zabezpečenie pohrebu',
-    //       imgData: fetchData.Services1,
-    //     },
-    //     {
-    //       title: 'Ponuka truhiel',
-    //       description:
-    //         'Široký výber truhiel od cenovo dostupných až po prémiové',
-    //       imgData: fetchData.Services2,
-    //     },
-    //     {
-    //       title: 'Kytice a vence',
-    //       description: 'Viažeme smútočné kytice a vence podľa Vašich prianí',
-    //       imgData: fetchData.Services3,
-    //     },
-    //   ],
-    //   button: 'Chcete vedieť viac?',
-    //   logo: fetchData.logo_row,
-    // },
+    experiences: {
+      title: 'Skúsenosti našich zákazníkov',
+      description:
+        'Veríme že v ťažkých životných situáciach odceníte náš individuálny prístup, profesionalitu a pochopenie. Máme dlhoročné skúseností v poskytovaní pohrebných služieb na profesionálnej úrovni. ',
+      items: [
+        {
+          title: 'M. Kováčová',
+          description:
+            'Ďakujeme pohrebnes službe ODO za promptné vybavenie pohrebu a pomoc ktorú nám poskytli. Odcenujeme najmä ich individuálny prístup.',
+        },
+        {
+          title: 'T. Osuská',
+          description:
+            'Ďakujeme pohrebnes službe ODO za promptné vybavenie pohrebu a pomoc ktorú nám poskytli. Odcenujeme najmä ich individuálny prístup.',
+        },
+        {
+          title: 'A. Tkáčová',
+          description:
+            'Ďakujeme pohrebnes službe ODO za promptné vybavenie pohrebu a pomoc ktorú nám poskytli. Odcenujeme najmä ich individuálny prístup.',
+        },
+      ],
+    },
   };
 
   return (
@@ -193,6 +191,7 @@ const IndexPage = (): JSX.Element => {
       <WhyUs {...data.whyUs} buttonTo="služby" />
       <Services {...data.services} buttonTo="služby" />
       <ImageParagraph {...data.advance} isImageOnTheLeft />
+      <Experiences {...data.experiences} />
     </Layout>
   );
 };
