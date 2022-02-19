@@ -31,10 +31,6 @@ const Footer = (props: FooterProps) => {
       flexDir={{ md: 'row', base: 'column' }}
       alignItems={{ md: 'normal', base: 'center' }}
       justifyContent={'center'}
-      m="auto"
-      position="relative"
-      bottom={0}
-      w="100%"
       bgColor="#1A4645"
       color="white"
     >
