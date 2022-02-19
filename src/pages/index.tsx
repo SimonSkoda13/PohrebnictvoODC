@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { ImageBanner } from '../components/Shared/imageBanner/ImageBanner';
 import { WhyUs } from '../components/Sections/WhyUs/WhyUs';
 import { Services } from '@/components/Sections/Services/Services';
+import { ImageParagraph } from '@/components/Shared/ImageParagraph/ImageParagraph';
 
 const IndexPage = (): JSX.Element => {
   const fetchData = useStaticQuery(graphql`
@@ -57,6 +58,13 @@ const IndexPage = (): JSX.Element => {
       logo_row: file(relativePath: { eq: "logo-row.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      Advance: file(relativePath: { eq: "index/Advance.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -121,6 +129,56 @@ const IndexPage = (): JSX.Element => {
       button: 'Chcete vedieť viac?',
       logo: fetchData.logo_row,
     },
+    advance: {
+      image: fetchData.Advance,
+      title: 'Ako postupovať pri zabezpečení pohrebu?',
+      description:
+        'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR',
+      items: [
+        {
+          title: 'Pohrebné služby',
+          description: 'Ponúkame komplexné zabezpečenie pohrebu',
+          imgData: fetchData.Services1,
+        },
+        {
+          title: 'Ponuka truhiel',
+          description:
+            'Široký výber truhiel od cenovo dostupných až po prémiové',
+          imgData: fetchData.Services2,
+        },
+        {
+          title: 'Kytice a vence',
+          description: 'Viažeme smútočné kytice a vence podľa Vašich prianí',
+          imgData: fetchData.Services3,
+        },
+      ],
+      button: 'Zavolajte nám +421 905 309 755',
+    },
+    // services: {
+    //   title: 'Pohrebné služby',
+    //   description:
+    //     'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR.',
+    //   items: [
+    //     {
+    //       title: 'Pohrebné služby',
+    //       description: 'Ponúkame komplexné zabezpečenie pohrebu',
+    //       imgData: fetchData.Services1,
+    //     },
+    //     {
+    //       title: 'Ponuka truhiel',
+    //       description:
+    //         'Široký výber truhiel od cenovo dostupných až po prémiové',
+    //       imgData: fetchData.Services2,
+    //     },
+    //     {
+    //       title: 'Kytice a vence',
+    //       description: 'Viažeme smútočné kytice a vence podľa Vašich prianí',
+    //       imgData: fetchData.Services3,
+    //     },
+    //   ],
+    //   button: 'Chcete vedieť viac?',
+    //   logo: fetchData.logo_row,
+    // },
   };
 
   return (
@@ -134,6 +192,7 @@ const IndexPage = (): JSX.Element => {
       />
       <WhyUs {...data.whyUs} buttonTo="služby" />
       <Services {...data.services} buttonTo="služby" />
+      <ImageParagraph {...data.advance} isImageOnTheLeft />
     </Layout>
   );
 };
