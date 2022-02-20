@@ -6,10 +6,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Container } from '@/components/Shared/Container/Container';
 import { Box, Flex, SimpleGrid } from '@chakra-ui/react';
 import { SectionHeading } from '@/components/Shared/SectionHeading/SectionHeading';
-import { Map } from '@/components/Shared/Map/Map';
 import { HeadDiscAndContent } from '@/components/Shared/HeadDiscAndContent/HeadDiscAndContent';
 
-const IndexPage = (): JSX.Element => {
+const ContactPage = (): JSX.Element => {
   const fetchData = useStaticQuery(graphql`
     query siteQuery {
       site {
@@ -81,4 +80,4 @@ const IndexPage = (): JSX.Element => {
   );
 };
 
-export default IndexPage;
+export default ContactPage;

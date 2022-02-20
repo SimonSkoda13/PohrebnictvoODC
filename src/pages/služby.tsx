@@ -3,13 +3,12 @@ import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { useStaticQuery, graphql } from 'gatsby';
-import { ImageBanner } from '../components/Shared/ImageBanner/ImageBanner';
 import { Services } from '@/components/Sections/Services/Services';
 import { Container } from '@/components/Shared/Container/Container';
 import { HeadAdnDisc } from '@/components/Shared/HeadAndDisc/HeadAdnDisc';
 import { ServicesWithImageBanner } from '@/components/Sections/ServicesWithImageBanner/Since';
 
-const IndexPage = (): JSX.Element => {
+const ServicesPage = (): JSX.Element => {
   const fetchData = useStaticQuery(graphql`
     fragment BannerImage on File {
       childImageSharp {
@@ -182,4 +181,4 @@ const IndexPage = (): JSX.Element => {
   );
 };
 
-export default IndexPage;
+export default ServicesPage;
