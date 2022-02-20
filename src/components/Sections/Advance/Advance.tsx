@@ -6,6 +6,7 @@ import {
 } from '@/components/Shared/HeadAndDisc/HeadAdnDisc';
 import { ImageParagraph } from '@/components/Shared/ImageParagraph/ImageParagraph';
 import { BoxProps, Flex } from '@chakra-ui/react';
+import { Container } from '@/components/Shared/Container/Container';
 
 interface AdvanceProps extends BoxProps {
   image?: any;
@@ -27,12 +28,14 @@ export const Advance = (props: AdvanceProps) => {
   } = props;
   return (
     <ImageParagraph {...props}>
-      {items.map((item) => {
-        return <HeadAdnDisc {...item} />;
-      })}
-      <Flex justifyContent={{ md: 'left', base: 'center' }}>
-        <IButton text={button} to={''} />
-      </Flex>
+      <Container>
+        {items.map((item) => {
+          return <HeadAdnDisc {...item} />;
+        })}
+        <Flex justifyContent={{ md: 'left', base: 'center' }}>
+          <IButton text={button} to={''} />
+        </Flex>
+      </Container>
     </ImageParagraph>
   );
 };

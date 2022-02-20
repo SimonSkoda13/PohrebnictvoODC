@@ -1,5 +1,6 @@
 import { IButton, IButtonProps } from '@/components/Shared/Button/Button';
 import { HeadAdnDisc } from '@/components/Shared/HeadAndDisc/HeadAdnDisc';
+import { HeadDiscAndContent } from '@/components/Shared/HeadDiscAndContent/HeadDiscAndContent';
 import { Box, BoxProps, Flex, UnorderedList } from '@chakra-ui/react';
 import React from 'react';
 import { Container } from '../../../Shared/Container/Container';
@@ -11,10 +12,12 @@ import {
 export interface ServicesWithImageBannerItemProps extends BoxProps {
   imageBanner: ImageBannerProps;
   content: {
-    title: string;
-    description: string;
-    items: string[];
-    text: string;
+    headDiscAndContent: {
+      title: string;
+      description: string;
+      items: string[];
+      text: string;
+    };
     other: {
       title: string;
       description: string;
@@ -31,17 +34,7 @@ export const ServicesWithImageBannerItem = (
     <Flex flexDir="column">
       <ImageBanner {...imageBanner} isCentered />
       <Container>
-        <HeadAdnDisc
-          {...{ description: content.description, title: content.title }}
-        />
-        <UnorderedList>
-          {content.items.map((item) => {
-            return <li>{item}</li>;
-          })}
-        </UnorderedList>
-        <Box mt={8} mb={10}>
-          {content.text}
-        </Box>
+        <HeadDiscAndContent {...content.headDiscAndContent} />
         <HeadAdnDisc {...content.other} />
         <Flex>
           <IButton {...content.button} />
