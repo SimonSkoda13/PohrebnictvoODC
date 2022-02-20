@@ -17,7 +17,7 @@ export const SectionHeading = (props: SectionHeadingProps) => {
     ...restOfProps
   } = props;
   return (
-    <Box {...restOfProps} maxW={600}>
+    <Box {...restOfProps} maxW={600} my={4}>
       <Stack
         alignItems={isCentered ? 'center' : 'left'}
         textAlign={isCentered ? 'center' : 'left'}
@@ -37,7 +37,7 @@ export const SectionHeading = (props: SectionHeadingProps) => {
           background={colorMode === 'white' ? 'white' : 'primary'}
         />
         {description && (
-          <Box mb={{ base: -0.5, md: -1.5 }} fontSize="small" mt={10}>
+          <Box mb={{ base: -0.5, md: -1.5 }} mt={10}>
             {description}
           </Box>
         )}

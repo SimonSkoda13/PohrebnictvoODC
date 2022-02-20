@@ -5,7 +5,7 @@ import React from 'react';
 import { SectionHeading } from '../SectionHeading/SectionHeading';
 import { IButton } from '../Button/Button';
 
-interface ImageBannerProps extends BoxProps {
+export interface ImageBannerProps extends BoxProps {
   title: string;
   description?: string;
   button?: string;
@@ -46,7 +46,7 @@ export const ImageBanner = (props: ImageBannerProps) => {
               isCentered={isCentered}
               colorMode="white"
             />
-            {button && link && <IButton to={link} text={button} />}
+            {button && <IButton to={link} text={button} />}
           </Stack>
         </Flex>
       </BackgroundImage>
