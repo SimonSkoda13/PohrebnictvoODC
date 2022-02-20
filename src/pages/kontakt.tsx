@@ -37,7 +37,7 @@ const IndexPage = (): JSX.Element => {
       items: fetchData.site.siteMetadata.contacts,
     },
     WhereWeAre: {
-      title: 'Kde nás nájdete ',
+      title: 'Kde nás nájdete',
     },
   };
 
