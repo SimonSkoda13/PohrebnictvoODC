@@ -1,3 +1,4 @@
+import { About } from '@/components/Sections/About/About';
 import { Experiences } from '@/components/Sections/Experiences/Experiences';
 import { WhyUs } from '@/components/Sections/WhyUs/WhyUs';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -25,6 +26,22 @@ const AboutPage = (): JSX.Element => {
 
       WhyUsImg3: file(relativePath: { eq: "index/WhyUsImg3.png" }) {
         ...SmallImg
+      }
+      Logo: file(relativePath: { eq: "logo-column.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      ImageParagraphLogo: file(
+        relativePath: { eq: "about/ImageParagraphLogo.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
     }
   `);
@@ -77,10 +94,35 @@ const AboutPage = (): JSX.Element => {
         },
       ],
     },
+    about: {
+      image: fetchData.ImageParagraphLogo,
+      logo: fetchData.Logo,
+      title: 'O nás',
+      description:
+        'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR',
+      headDiscAndContent: {
+        title: 'Informácie pre zákazníkov',
+        description:
+          'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
+        items: [
+          'Informačný text k pohrebnej službe',
+          'Druhý Informačný text k pohrebnej službe',
+          'Tretí Informačný text k pohrebnej službe',
+          'Štvrtý Informačný text k pohrebnej službe',
+        ],
+        text: 'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
+      },
+      headAdnDisc: {
+        title: 'Iná dôležitá informácia',
+        description:
+          'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
+      },
+    },
   };
   return (
     <Layout>
       <SEO title="O nás" />
+      <About {...data.about} />
       <WhyUs {...data.whyUs} />
       <Experiences {...data.experiences} />
     </Layout>
