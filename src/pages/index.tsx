@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { ImageBanner } from '../components/Shared/imageBanner/ImageBanner';
 import { WhyUs } from '../components/Sections/WhyUs/WhyUs';
 import { Services } from '@/components/Sections/Services/Services';
-import { ImageParagraph } from '@/components/Shared/ImageParagraph/ImageParagraph';
+import { Advance } from '@/components/Sections/Advance/Advance';
 
 const IndexPage = (): JSX.Element => {
   const fetchData = useStaticQuery(graphql`
@@ -192,7 +192,7 @@ const IndexPage = (): JSX.Element => {
       />
       <WhyUs {...data.whyUs} buttonTo="služby" />
       <Services {...data.services} buttonTo="služby" />
-      <ImageParagraph {...data.advance} isImageOnTheLeft />
+      <Advance {...data.advance} isImageOnTheLeft />
     </Layout>
   );
 };

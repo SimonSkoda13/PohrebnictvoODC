@@ -1,23 +1,12 @@
-import {
-  BoxProps,
-  useBreakpointValue,
-  Box,
-  SimpleGrid,
-  Flex,
-  GridItem,
-} from '@chakra-ui/react';
+import { BoxProps, Box, SimpleGrid, Flex, GridItem } from '@chakra-ui/react';
 import BackgroundImage from 'gatsby-background-image';
 import React from 'react';
-import { IButton } from '../Button/Button';
-import { Container } from '../Container/Container';
-import { HeadAdnDisc, HeadAdnDiscProps } from '../HeadAndDisc/HeadAdnDisc';
 import { SectionHeading } from '../SectionHeading/SectionHeading';
 
 interface ImageParagraphProps extends BoxProps {
   image?: any;
   isImageOnTheLeft?: boolean;
-  items: HeadAdnDiscProps[];
-  button?: string;
+  children: React.ReactNode[] | React.ReactNode;
   title: string;
   description: string;
 }
@@ -26,9 +15,8 @@ export const ImageParagraph = (props: ImageParagraphProps) => {
     image,
     title,
     description,
-    button,
     isImageOnTheLeft,
-    items,
+    children,
     ...restOfProps
   } = props;
   console.log(
@@ -70,12 +58,7 @@ export const ImageParagraph = (props: ImageParagraphProps) => {
           </Flex>
         )}
         <GridItem gridRowStart={isImageOnTheLeft ? 0 : 1} py={8}>
-          {items.map((item) => {
-            return <HeadAdnDisc {...item} />;
-          })}
-          <Flex justifyContent={{ md: 'left', base: 'center' }}>
-            <IButton text={button} to={''} />
-          </Flex>
+          {children}
         </GridItem>
       </SimpleGrid>
     </Box>
