@@ -91,16 +91,18 @@ const IndexPage = (): JSX.Element => {
           imgData: fetchData.ServicesWithImageBanner1,
         },
         content: {
-          title: 'Informácie ohľadom Pohrebných služieb',
-          description:
-            'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
-          items: [
-            'Informačný text k pohrebnej službe',
-            'Druhý Informačný text k pohrebnej službe',
-            'Tretí Informačný text k pohrebnej službe',
-            'Štvrtý Informačný text k pohrebnej službe',
-          ],
-          text: 'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
+          headDiscAndContent: {
+            title: 'Informácie ohľadom Pohrebných služieb',
+            description:
+              'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
+            items: [
+              'Informačný text k pohrebnej službe',
+              'Druhý Informačný text k pohrebnej službe',
+              'Tretí Informačný text k pohrebnej službe',
+              'Štvrtý Informačný text k pohrebnej službe',
+            ],
+            text: 'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
+          },
           other: {
             title: 'Iná dôležitá informácia',
             description:
@@ -117,16 +119,18 @@ const IndexPage = (): JSX.Element => {
           imgData: fetchData.ServicesWithImageBanner2,
         },
         content: {
-          title: 'Informácie ohľadom Truhiel',
-          description:
-            'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
-          items: [
-            'Informačný text k pohrebnej službe',
-            'Druhý Informačný text k pohrebnej službe',
-            'Tretí Informačný text k pohrebnej službe',
-            'Štvrtý Informačný text k pohrebnej službe',
-          ],
-          text: 'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
+          headDiscAndContent: {
+            title: 'Informácie ohľadom Truhiel',
+            description:
+              'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
+            items: [
+              'Informačný text k pohrebnej službe',
+              'Druhý Informačný text k pohrebnej službe',
+              'Tretí Informačný text k pohrebnej službe',
+              'Štvrtý Informačný text k pohrebnej službe',
+            ],
+            text: 'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
+          },
           other: {
             title: 'Iná dôležitá informácia',
             description:
@@ -143,16 +147,18 @@ const IndexPage = (): JSX.Element => {
           imgData: fetchData.ServicesWithImageBanner3,
         },
         content: {
-          title: 'Informácie ohľadom Truhiel',
-          description:
-            'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
-          items: [
-            'Informačný text k pohrebnej službe',
-            'Druhý Informačný text k pohrebnej službe',
-            'Tretí Informačný text k pohrebnej službe',
-            'Štvrtý Informačný text k pohrebnej službe',
-          ],
-          text: 'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
+          headDiscAndContent: {
+            title: 'Informácie ohľadom Truhiel',
+            description:
+              'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
+            items: [
+              'Informačný text k pohrebnej službe',
+              'Druhý Informačný text k pohrebnej službe',
+              'Tretí Informačný text k pohrebnej službe',
+              'Štvrtý Informačný text k pohrebnej službe',
+            ],
+            text: 'Pohrebná služba ODO s.r.o. má dlhoročné skúseností v poskytovaní pohrebných služieb v rámci Bratislavy a SR. Prioritou Pohrebnej služby ODO s.r.o. je poskytovať kvalitné služby za čo najnižšie ceny v rámci Bratislavy.',
+          },
           other: {
             title: 'Iná dôležitá informácia',
             description:

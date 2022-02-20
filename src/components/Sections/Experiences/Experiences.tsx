@@ -4,7 +4,7 @@ import {
   HeadAdnDiscProps,
 } from '@/components/Shared/HeadAndDisc/HeadAdnDisc';
 import { SectionHeading } from '@/components/Shared/SectionHeading/SectionHeading';
-import { Flex, useAccordionItemState } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import React from 'react';
 
 export type ExperiencesProps = {

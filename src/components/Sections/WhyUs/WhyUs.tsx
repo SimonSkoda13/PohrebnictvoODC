@@ -16,26 +16,28 @@ export interface WhyUsProps extends BoxProps {
 export const WhyUs = (props: WhyUsProps) => {
   const { title, description, items, button, buttonTo, ...restOfProps } = props;
   return (
-    <Container>
-      <Flex flexDir="column" alignItems="center" pb={9}>
-        <SectionHeading
-          title={title}
-          description={description}
-          isCentered
-          py={5}
-        />
-        <Flex
-          flexDir={{ md: 'row', base: 'column' }}
-          alignItems={{ md: 'normal', base: 'center' }}
-          justifyContent={'center'}
-          py={5}
-        >
-          {items.map((item) => {
-            return <WhyUsItem {...item} />;
-          })}
+    <Flex boxShadow="md">
+      <Container>
+        <Flex flexDir="column" alignItems="center" pb={9}>
+          <SectionHeading
+            title={title}
+            description={description}
+            isCentered
+            py={5}
+          />
+          <Flex
+            flexDir={{ md: 'row', base: 'column' }}
+            alignItems={{ md: 'normal', base: 'center' }}
+            justifyContent={'center'}
+            py={5}
+          >
+            {items.map((item) => {
+              return <WhyUsItem {...item} />;
+            })}
+          </Flex>
+          <IButton text={button} to={buttonTo ? buttonTo : '/'} mt={6} />
         </Flex>
-        <IButton text={button} to={buttonTo ? buttonTo : '/'} mt={6} />
-      </Flex>
-    </Container>
+      </Container>
+    </Flex>
   );
 };

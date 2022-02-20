@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'ODC Pohrebná Služba',
+    title: 'ODO Pohrebná Služba',
     header1: [
       '+421 905 309 755',
       ' Nonstop linka - Zavolajte nám. Sme tu pre Vás.',
@@ -13,7 +13,7 @@ module.exports = {
       'Pravidlá ochrany GDPR',
       'Všeobecné obchodné podmienky',
     ],
-    author: `Momentum digital`,
+    author: `Momentum digital && Šimon Škoda`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
