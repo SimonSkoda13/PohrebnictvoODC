@@ -5,10 +5,11 @@ export interface HeadAdnDiscProps extends BoxProps {
   title: string;
   description: string;
   isCentered?: boolean;
+  colorMode?: 'black' | 'white';
 }
 
 export const HeadAdnDisc = (props: HeadAdnDiscProps) => {
-  const { title, description, isCentered, ...restOfProps } = props;
+  const { title, description, colorMode, isCentered, ...restOfProps } = props;
   return (
     <Flex
       flexDirection="column"
@@ -16,10 +17,14 @@ export const HeadAdnDisc = (props: HeadAdnDiscProps) => {
       textAlign={isCentered ? 'center' : 'left'}
       {...restOfProps}
     >
-      <Heading color="primary" pb={2} fontSize="xl">
+      <Heading
+        color={colorMode == 'white' ? 'white' : 'primary'}
+        pb={2}
+        fontSize="xl"
+      >
         {title}
       </Heading>
-      <Text color="black" fontSize="sm">
+      <Text color={colorMode == 'white' ? 'white' : 'black'} fontSize="sm">
         {description}
       </Text>
     </Flex>

@@ -60,9 +60,11 @@ const Header = (props: HeaderProps) => {
         rounded="md"
         boxShadow=" rgba(0, 0, 0, 0.35) 0px 5px 15px;"
       >
-        <Box w={150}>
-          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-        </Box>
+        <Link to="/">
+          <Box w={150}>
+            <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+          </Box>
+        </Link>
         {isMobile ? (
           <Menu>
             <MenuButton
