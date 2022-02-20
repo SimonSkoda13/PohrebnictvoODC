@@ -72,7 +72,6 @@ const IndexPage = (): JSX.Element => {
       }
     }
   `);
-  console.log('🚀 ~ file: index.tsx ~ line 59 ~ fetchData', fetchData);
   const data = {
     imageBanner: {
       title: 'Prevedieme Vás ťažkou životnou situáciou',
