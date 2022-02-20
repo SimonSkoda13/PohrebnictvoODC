@@ -9,7 +9,6 @@ import { Services } from '@/components/Sections/Services/Services';
 import { Advance } from '@/components/Sections/Advance/Advance';
 import { Experiences } from '@/components/Sections/Experiences/Experiences';
 
-
 const IndexPage = (): JSX.Element => {
   const fetchData = useStaticQuery(graphql`
     fragment BannerImage on File {
@@ -73,7 +72,6 @@ const IndexPage = (): JSX.Element => {
       }
     }
   `);
-  console.log('🚀 ~ file: index.tsx ~ line 59 ~ fetchData', fetchData);
   const data = {
     imageBanner: {
       title: 'Prevedieme Vás ťažkou životnou situáciou',
