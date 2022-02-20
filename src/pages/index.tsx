@@ -3,12 +3,11 @@ import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { useStaticQuery, graphql } from 'gatsby';
-import { ImageBanner } from '../components/Shared/imageBanner/ImageBanner';
+import { ImageBanner } from '../components/Shared/ImageBanner/ImageBanner';
 import { WhyUs } from '../components/Sections/WhyUs/WhyUs';
 import { Services } from '@/components/Sections/Services/Services';
 import { Advance } from '@/components/Sections/Advance/Advance';
 import { Experiences } from '@/components/Sections/Experiences/Experiences';
-
 
 const IndexPage = (): JSX.Element => {
   const fetchData = useStaticQuery(graphql`

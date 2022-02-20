@@ -90,7 +90,9 @@ const Header = (props: HeaderProps) => {
                   </MenuItem>
                 ) : (
                   <MenuItem>
-                    <Link to={item.toLocaleLowerCase().replace(/\s/g, '')}>
+                    <Link
+                      to={'/' + item.toLocaleLowerCase().replace(/\s/g, '')}
+                    >
                       <Box fontSize="md" px={10}>
                         {item}
                       </Box>
@@ -109,7 +111,7 @@ const Header = (props: HeaderProps) => {
                 </Box>
               </Link>
             ) : (
-              <Link to={item.toLocaleLowerCase().replace(/\s/g, '')}>
+              <Link to={'/' + item.toLocaleLowerCase().replace(/\s/g, '')}>
                 <Box fontSize="md" px={3}>
                   {item}
                 </Box>

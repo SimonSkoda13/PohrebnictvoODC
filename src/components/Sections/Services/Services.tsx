@@ -34,7 +34,9 @@ export const Services = (props: ServicesProps) => {
             return <ServicesItem {...item} />;
           })}
         </SimpleGrid>
-        <IButton text={button} to={buttonTo ? buttonTo : '/'} mt={6} />
+        {button && (
+          <IButton text={button} to={buttonTo ? buttonTo : '/'} mt={6} />
+        )}
       </Flex>
     </Container>
   );

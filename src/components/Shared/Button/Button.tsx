@@ -4,13 +4,28 @@ import { Link } from 'gatsby';
 
 export interface IButtonProps extends BoxProps {
   text: string;
-  to: string;
+  to?: string;
 }
 export const IButton = (props: IButtonProps) => {
   const { to, text, ...restOfProps } = props;
   return (
     <Box {...restOfProps}>
-      <Link to={to}>
+      {to ? (
+        <Link to={to}>
+          <Box
+            background="primary"
+            color="white"
+            p={3}
+            px={5}
+            minW={50}
+            borderRadius={3}
+            fontSize="sm"
+            fontWeight="600"
+          >
+            {text}
+          </Box>
+        </Link>
+      ) : (
         <Box
           background="primary"
           color="white"
@@ -23,7 +38,7 @@ export const IButton = (props: IButtonProps) => {
         >
           {text}
         </Box>
-      </Link>
+      )}
     </Box>
   );
 };
