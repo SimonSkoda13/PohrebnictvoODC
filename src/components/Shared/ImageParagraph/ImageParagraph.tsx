@@ -19,10 +19,6 @@ export const ImageParagraph = (props: ImageParagraphProps) => {
     children,
     ...restOfProps
   } = props;
-  console.log(
-    '🚀 ~ file: ImageParagraph.tsx ~ line 32 ~ ImageParagraph ~ image',
-    image,
-  );
 
   return (
     <Box py={10} {...restOfProps}>
