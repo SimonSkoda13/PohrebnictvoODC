@@ -143,7 +143,7 @@ const PriceListPage = (): JSX.Element => {
   };
   return (
     <Layout>
-      <SEO title="O nás" />
+      <SEO title="Cenník" />
       <Container>
         <SectionHeading {...data} my={10} />
       </Container>
