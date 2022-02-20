@@ -19,7 +19,10 @@ export const HeadDiscAndContent = (props: HeadDiscAndContentProps) => {
       {isSectionHeading ? (
         <SectionHeading {...{ description, title }} />
       ) : (
-        <HeadAdnDisc {...{ description, title }} />
+        <HeadAdnDisc
+          {...{ description, title }}
+          {...(restOfProps.color == 'white' && { colorMode: 'white' })}
+        />
       )}
       <UnorderedList>
         {items.map((item) => {
