@@ -24,7 +24,7 @@ export const HeadAdnDisc = (props: HeadAdnDiscProps) => {
       >
         {title}
       </Heading>
-      <Text color={colorMode == 'white' ? 'white' : 'black'} fontSize="sm">
+      <Text color={colorMode == 'white' ? 'white' : 'black'}>
         {description}
       </Text>
     </Flex>

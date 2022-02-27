@@ -39,18 +39,27 @@ const Header = (props: HeaderProps) => {
   const { header1, header2, ...restOfProps } = props;
   return (
     <Box>
-      <Flex
-        width="100%"
-        height={30}
-        bgColor="primary"
-        justifyContent={'center'}
-        alignContent="center"
-        color="white"
-        display={{ md: 'flex', base: 'none' }}
-      >
-        <Icon as={BsTelephone} size="30px" pt={1} />
-        {header1}
-      </Flex>
+      {!isMobile && (
+        <Flex
+          width="100%"
+          bgColor="primary"
+          justifyContent={'center'}
+          alignContent="center"
+          textAlign="center"
+          color="white"
+          flexDir={{ md: 'row', base: 'column' }}
+          p={1}
+          px={3}
+        >
+          <Flex alignItems="center" justifyContent="center">
+            <Icon as={BsTelephone} w={5} h={5} my={1} mr={1} />
+            <Box p={1}>{header1[0]}</Box>
+          </Flex>
+          <Flex alignItems="center" justifyContent="center">
+            <Box p={1}>{header1[1]}</Box>
+          </Flex>
+        </Flex>
+      )}
       <Flex
         width="100%"
         height={30}
@@ -80,12 +89,7 @@ const Header = (props: HeaderProps) => {
                 return index == 0 ? (
                   <MenuItem>
                     <Link to="/">
-                      <Box
-                        fontSize="md"
-                        fontWeight="bold"
-                        px={10}
-                        color="#226867"
-                      >
+                      <Box fontSize="md" fontWeight="bold" color="#226867">
                         {item}
                       </Box>
                     </Link>
@@ -95,9 +99,7 @@ const Header = (props: HeaderProps) => {
                     <Link
                       to={'/' + item.toLocaleLowerCase().replace(/\s/g, '')}
                     >
-                      <Box fontSize="md" px={10}>
-                        {item}
-                      </Box>
+                      <Box fontSize="md">{item}</Box>
                     </Link>
                   </MenuItem>
                 );
@@ -108,7 +110,13 @@ const Header = (props: HeaderProps) => {
           header2.map((item, index) => {
             return index == 0 ? (
               <Link to="/">
-                <Box fontSize="md" fontWeight="bold" px={3} color="#226867">
+                <Box
+                  fontSize="md"
+                  fontWeight="bold"
+                  px={3}
+                  pl={14}
+                  color="#226867"
+                >
                   {item}
                 </Box>
               </Link>
@@ -122,6 +130,27 @@ const Header = (props: HeaderProps) => {
           })
         )}
       </Flex>
+      {isMobile && (
+        <Flex
+          width="100%"
+          bgColor="primary"
+          justifyContent={'center'}
+          alignContent="center"
+          textAlign="center"
+          color="white"
+          flexDir={{ md: 'row', base: 'column' }}
+          p={1}
+          px={3}
+        >
+          <Flex alignItems="center" justifyContent="center">
+            <Icon as={BsTelephone} w={5} h={5} my={1} mr={1} />
+            <Box p={1}>{header1[0]}</Box>
+          </Flex>
+          <Flex alignItems="center" justifyContent="center">
+            <Box p={1}>{header1[1]}</Box>
+          </Flex>
+        </Flex>
+      )}
     </Box>
   );
 };

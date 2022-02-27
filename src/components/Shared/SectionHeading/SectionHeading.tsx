@@ -25,7 +25,7 @@ export const SectionHeading = (props: SectionHeadingProps) => {
         color={colorMode === 'white' ? 'white' : 'black'}
       >
         <Heading
-          fontSize="x-large"
+          fontSize="xx-large"
           color={colorMode === 'white' ? 'white' : 'primary'}
         >
           {title}

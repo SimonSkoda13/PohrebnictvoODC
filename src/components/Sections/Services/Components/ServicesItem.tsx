@@ -20,7 +20,7 @@ export const ServicesItem = (props: ServicesItemProps) => {
     ...restOfProps
   } = props;
   return (
-    <Box my={{ base: 5 }}>
+    <Box my={{ base: 10 }}>
       <BackgroundImage fluid={imgData.childImageSharp.fluid}>
         <Flex justifyContent="center" textAlign="center" flexDir="column">
           <Box height="400px" maxWidth="300px">
@@ -33,10 +33,10 @@ export const ServicesItem = (props: ServicesItemProps) => {
               background="white"
               experimental_spaceY={2}
             >
-              <Heading color="primary" fontSize="md">
+              <Heading color="primary" fontSize="x-large">
                 {title}
               </Heading>
-              <Box fontSize="small">{description}</Box>
+              <Box>{description}</Box>
 
               <Box fontSize="xl" color="primary">
                 <Link to={path}>Zistite viac</Link>

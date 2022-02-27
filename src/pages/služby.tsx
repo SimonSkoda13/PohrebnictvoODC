@@ -30,6 +30,13 @@ const ServicesPage = (): JSX.Element => {
       ) {
         ...BannerImage
       }
+      logo_row: file(relativePath: { eq: "logo-row.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       ServicesWithImageBanner2: file(
         relativePath: { eq: "sluzby/ServicesWithImageBanner2.png" }
       ) {
@@ -75,6 +82,7 @@ const ServicesPage = (): JSX.Element => {
           imgData: fetchData.Services3,
         },
       ],
+      logo: fetchData.logo_row,
     },
     since: {
       title: 'Sme tu pre Vás od roku 2007',

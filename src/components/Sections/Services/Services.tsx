@@ -24,9 +24,15 @@ export const Services = (props: ServicesProps) => {
         <SimpleGrid columns={{ md: 2, base: 1 }}>
           <SectionHeading title={title} description={description} py={5} />
           {logo && (
-            <Box maxW="300px" h="auto" display={{ md: 'block', base: 'none' }}>
+            <Flex
+              w="100%"
+              h="auto"
+              display={{ md: 'grid', base: 'none' }}
+              pl={16}
+              alignItems="end"
+            >
               <Img fluid={logo.childImageSharp.fluid} />
-            </Box>
+            </Flex>
           )}
         </SimpleGrid>
         <SimpleGrid columns={{ md: 3, base: 1 }} spacing={10} py={5} pb={10}>
@@ -35,7 +41,7 @@ export const Services = (props: ServicesProps) => {
           })}
         </SimpleGrid>
         {button && (
-          <IButton text={button} to={buttonTo ? buttonTo : '/'} mt={6} />
+          <IButton text={button} to={buttonTo ? buttonTo : '/'} mt={20} />
         )}
       </Flex>
     </Container>

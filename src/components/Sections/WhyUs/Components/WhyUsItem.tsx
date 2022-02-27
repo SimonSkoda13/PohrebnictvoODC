@@ -16,21 +16,21 @@ export const WhyUsItem = (props: WhyUsItemProps) => {
       flexDir="column"
       alignItems="center"
       textAlign="center"
-      maxW={190}
+      maxW={300}
       mx={{ md: 30, base: 0 }}
       my={{ md: 0, base: 30 }}
     >
-      <Box borderRadius="full" w="100px" h="100px">
+      <Box borderRadius="full" w={200} h={200}>
         <Img
           fluid={imgData.childImageSharp.fluid}
           objectFit="cover"
           objectPosition="50% 50%"
         />
       </Box>
-      <Heading color="primary" fontSize="md">
+      <Heading color="primary" fontSize="x-large" pb={3}>
         {title}
       </Heading>
-      <Box fontSize="small">{description}</Box>
+      <Box>{description}</Box>
     </Flex>
   );
 };
