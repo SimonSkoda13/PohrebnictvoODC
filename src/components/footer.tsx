@@ -38,7 +38,7 @@ const Footer = (props: FooterProps) => {
       <Box h={0}>
         <Flex
           position="relative"
-          top={-95}
+          top="-7.3rem"
           background="white"
           flexDir="column"
           justifyContent="center"
