@@ -37,7 +37,7 @@ export const ImageBanner = (props: ImageBannerProps) => {
           alignItems="center"
           flexDirection="column"
           p={10}
-          py={20}
+          py={10}
         >
           <Stack spacing={{ base: 5, md: 8 }} alignItems={'center'}>
             <SectionHeading

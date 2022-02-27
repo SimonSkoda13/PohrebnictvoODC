@@ -33,7 +33,7 @@ export const Advance = (props: AdvanceProps) => {
           return <HeadAdnDisc {...item} />;
         })}
         <Flex justifyContent={{ md: 'left', base: 'center' }}>
-          <IButton text={button} to={''} />
+          <IButton text={button} pt={10} />
         </Flex>
       </Container>
     </ImageParagraph>

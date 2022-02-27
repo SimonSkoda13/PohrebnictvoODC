@@ -33,56 +33,57 @@ const Footer = (props: FooterProps) => {
       justifyContent={'center'}
       bgColor="#1A4645"
       color="white"
+      mt={130}
     >
-      <Flex
-        background="white"
-        flexDir="column"
-        justifyContent="center"
-        textAlign="center"
-        color="#1A4645"
-        p={3}
-        mx={{ md: 7, base: 0 }}
-        maxWidth={200}
-        boxShadow=" rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;"
-      >
-        <Box pb={5}>
-          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-        </Box>
-        <Text fontSize="sxs" pb={2}>
-          {header1[0]}
-        </Text>
-        <Text fontSize="small" pb={3}>
-          {header1[1]}
-        </Text>
-      </Flex>
-      <Box py={5} mx={{ md: 7, base: 0 }} maxWidth={200}>
+      <Box h={0}>
+        <Flex
+          position="relative"
+          top={-95}
+          background="white"
+          flexDir="column"
+          justifyContent="center"
+          textAlign="center"
+          color="#1A4645"
+          p={3}
+          mx={{ md: 4, base: 0 }}
+          maxWidth={200}
+          boxShadow=" rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;"
+        >
+          <Box pb={5}>
+            <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+          </Box>
+          <Text pb={2}>{header1[0]}</Text>
+          <Text pb={3}>{header1[1]}</Text>
+        </Flex>
+      </Box>
+      <Box py={5} mx={{ md: 4, base: 0 }} maxWidth={200}>
         <Heading as="h4" size="sxs" pb={2}>
           Kontakty
         </Heading>
         <Box>
           {contacts.map((item) => {
-            return <Box fontSize="small">{item}</Box>;
+            return <Box>{item}</Box>;
           })}
         </Box>
       </Box>
-      <Box py={5} mx={{ md: 7, base: 0 }} maxWidth={200}>
+      <Box py={5} mx={{ md: 4, base: 0 }} maxWidth={200}>
         <Heading as="h4" size="sxs" pb={2}>
           Fakturačná adresa
         </Heading>
         <Box>
           {invoiceAdress.map((item) => {
-            return <Box fontSize="small">{item}</Box>;
+            return <Box>{item}</Box>;
           })}
         </Box>
       </Box>
-      <Box py={5} mx={{ md: 7, base: 0 }} maxWidth={200}>
+      <Box py={5} mx={{ md: 4, base: 0 }} maxWidth={200}>
         <Heading as="h4" size="sxs" pb={2}>
           Dôležité linky
         </Heading>
         <ul>
           {contacts.map((item) => {
             return (
-              <Box fontSize="small">
+              <Box>
                 <li>{item}</li>
               </Box>
             );
