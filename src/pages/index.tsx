@@ -180,7 +180,7 @@ const IndexPage = (): JSX.Element => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Domov" />
       <ImageBanner
         {...data.imageBanner}
         imgData={fetchData.ImageBanner}
